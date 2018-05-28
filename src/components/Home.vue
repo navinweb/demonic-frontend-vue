@@ -1,40 +1,32 @@
 <template>
   <div class="home">
-    <h1>{{ msg }}</h1>
-  </div>
-</template>
 
-<template>
-  <div class="card-expansion">
-    <md-card>
-      <md-card-media>
-        <img src="../assets/images/demons/chernobog.jpg" alt="Чернобог (Czorneboh, Czernebog)">
-      </md-card-media>
+    <Title></Title>
 
-      <md-card-header>
-        <div class="md-title">Чернобог (Czorneboh, Czernebog)</div>
-        <div class="md-subhead">В мифологии балтийских славян злой бог, приносящий несчастье.</div>
-      </md-card-header>
+    <div class="card-expansion">
+      <md-card>
+        <md-card-media>
+          <img src="../assets/images/demons/chernobog.jpg" alt="Чернобог (Czorneboh, Czernebog)">
+        </md-card-media>
 
-      <md-card-expand>
-        <md-card-actions md-alignment="space-between">
-          <div>
-            <md-button>Поделиться</md-button>
-          </div>
+        <md-card-header>
+          <div class="md-title">Чернобог (Czorneboh, Czernebog)</div>
+          <div class="md-subhead">В мифологии балтийских славян злой бог, приносящий несчастье.</div>
+        </md-card-header>
 
-          <md-card-expand-trigger>
-            <md-button>Читать</md-button>
-          </md-card-expand-trigger>
-        </md-card-actions>
+        <md-card-expand>
+          <md-card-actions md-alignment="space-between">
+            <div>
+              <md-button>Поделиться</md-button>
+            </div>
 
-        <md-card-expand-content>
-          <md-card-content>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio itaque ea, nostrum odio. Dolores, sed accusantium quasi non, voluptas eius illo quas, saepe voluptate pariatur in deleniti minus sint. Excepturi.
-          </md-card-content>
-        </md-card-expand-content>
-      </md-card-expand>
-    </md-card>
-
+            <md-card-expand-trigger>
+              <md-button>Читать</md-button>
+            </md-card-expand-trigger>
+          </md-card-actions>
+        </md-card-expand>
+      </md-card>
+    </div>
   </div>
 </template>
 
@@ -42,6 +34,7 @@
 import Vue from 'vue';
 import VueMaterial from 'vue-material';
 import 'vue-material/dist/vue-material.min.css';
+import Title from '@/components/common/Title';
 
 Vue.use(VueMaterial);
 
@@ -49,23 +42,26 @@ export default {
   name: 'Home',
   data() {
     return {
-      msg: 'Gods and Demons',
+      title: 'Gods and Demons',
     };
+  },
+  components: {
+    Title,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-  @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons');
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons");
 
-  .card-expansion {
-    height: 480px;
-  }
+.card-expansion {
+  height: 480px;
+}
 
-  .md-card {
-    width: 320px;
-    margin: 4px;
-    display: inline-block;
-    vertical-align: top;
-  }
+.md-card {
+  width: 320px;
+  margin: 4px;
+  display: inline-block;
+  vertical-align: top;
+}
 </style>
